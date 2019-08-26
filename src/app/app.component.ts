@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-serie-loiane';
+
+  titulo = 'Olá Mundo Angular 8';
+  aluno = 'Denilson - denilson.souza@live.com';
+  instrutor = 'Loiane';
+  frase = 'Como usar Template Literals?';
+
 }
