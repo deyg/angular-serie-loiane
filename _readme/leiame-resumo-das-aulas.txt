@@ -1,0 +1,103 @@
+
+#AMBIENTE ANGULAR
+
+baixar e instalar o node => nodejs.org
+> node --version => apresenta a versao do node instalada
+
+//com o node é instalado o NPM - gerenciado de dependencias
+//https://www.npmjs.com/ => repositorio
+> npm --version => apresenta a versao instalada do NPM
+
+> npm install -g typescript => instala o typescript
+> tsc -v => apresenta a versao do typescript instalada
+
+//O Angular CLI é uma ferramenta open source e é utilizado para facilitar a criação de componentes, classes, services e outros.
+> npm install -g @angular/cli => instala o Angular CLI
+> ng --version => apresenta a versao do angular CLI instalado
+
+
+#PRIMEIRO PROJETO
+> ng new primeiro-projeto => cria estrutura do projeto mais suas dependencias
+> cd primeiro-projeto => muda para o diretorio do projeto criado
+> ng serve => faz o build do projeto e inicializa a aplicacao na porta localhost:4200
+
+*****************************************************
+VERSAO DO ANGULAR: 8x
+"dependencies": {
+    "@angular/animations": "~8.2.3",
+    "@angular/common": "~8.2.3",
+    "@angular/compiler": "~8.2.3",
+    "@angular/core": "~8.2.3",
+    "@angular/forms": "~8.2.3",
+    "@angular/platform-browser": "~8.2.3",
+    "@angular/platform-browser-dynamic": "~8.2.3",
+    "@angular/router": "~8.2.3",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+*****************************************************
+
+------------------------------------------
+#Criando componente Manualmente
+meu-primeiro-componente
+(nota: criar sem usar o CLI)
+------------------------------------------
+Abrir o projeto no VSCode
+Criar uma pasta meu-primeiro
+Criar um arquivo meu-primeiro-component.ts na pasta
+Definir uma classse com: class MeuPrimeiroComponente{}
+Adicionar o decorator: @Component({})
+Adicionar o import do decorator: import { Component } from '@angular/core';
+Adicionar metadados ao decorator (essenciais): select e template
+- exemplo:
+	@Component({
+	    selector: 'meu-primeiro-component',
+	    template: `
+ 	       <p> Meu primeiro componente com Angular 8! </p>
+ 	   `
+	})
+Expor a classe para outros arquivos com export class MeuPrimeiroComponent{}
+Declarar o component no modulo, na sessao Declarations do arquivo app.module.ts 
+- exemplo:
+	@NgModule({
+  		declarations: [
+  	 	 AppComponent,
+  	 	 MeuPrimeiroComponente
+  		],
+	...
+	})
+Realizar o import do component para que o mesmo seja localizado pelo app.module.ts
+na sessao de imports:
+import { MeuPrimeiroComponente } from './meu-primeiro/meu-primeiro.component'; 
+Utilizar o seletor criado no arquivo app.component.html:
+- exemplo
+	<meu-primeiro-component></meu-primeiro-component>
+
+
+
+------------------------------------------
+#Criando componente Automaticamente com CLI 
+meu-primeiro2
+------------------------------------------
+
+> ng generate component meu-primeiro2
+ou
+> ng g c meu-primeiro2
+
+
+*****************************************************
+VERSIONANDO: GIT E GITHUB
+=>Repositorio remoto no GITHUB:
+
+…or push an existing repository from the command line
+git remote add origin git@github.com:deyg/angular-serie-loiane.git
+git push -u origin master
+*****************************************************
+
+
+
+
+
+
+
