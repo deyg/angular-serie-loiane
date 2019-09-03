@@ -96,8 +96,82 @@ git push -u origin master
 *****************************************************
 
 ------------------------------------------
-#Modulo
+#5 - Modulo
 ------------------------------------------
+> ng g module «nome-do-modulo»
+> ng g module cursos ou ng m cursos
+> [ CREATE src/app/cursos/cursos.module.ts (192 bytes) ]
+ob-01 - O modulo de bootstrap so existe no modulo raiz
+ob-02 - O modulo de funcionalidade nao importa BrowserModule
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
+})
+contudo importa o CommonModule
+
+//Criar componente no modulo Cursos
+> ng g c cursos
+--------------------------------------------------------------------------------
+PS C:\@cursos\_git-repositorios\loiane\angular-serie-loiane> ng g c cursos
+CREATE src/app/cursos/cursos.component.html (21 bytes)
+CREATE src/app/cursos/cursos.component.spec.ts (628 bytes)
+CREATE src/app/cursos/cursos.component.ts (269 bytes)
+CREATE src/app/cursos/cursos.component.css (0 bytes)
+UPDATE src/app/cursos/cursos.module.ts (261 bytes)
+--------------------------------------------------------------------------------
+
+
+//Apos adicionar o componente cursos no componente raiz a aplicacao
+gerou erro: 
+--------------------------------------------------------------------------------
+Uncaught Error: Template parse errors:
+'app-cursos' is not a known element:
+1. 
+If 'app-cursos' is an Angular component, then verify that it is part of this module.
+2. 
+If 'app-cursos' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress this message. 
+("
+ <app-meu-primeiro2></app-meu-primeiro2>...")
+
+... entao app.module.ts deve conhecer o modulo assim:
+ imports: [
+    BrowserModule,
+    CursosModule
+  ],
+--------------------------------------------------------------------------------
+
+//Outro componente no modulo cursos
+--------------------------------------------------------------------------------
+PS C:\@cursos\_git-repositorios\loiane\angular-serie-loiane> ng g c cursos/curso-detalhe
+CREATE src/app/cursos/curso-detalhe/curso-detalhe.component.html (28 bytes)
+CREATE src/app/cursos/curso-detalhe/curso-detalhe.component.spec.ts (671 bytes)
+CREATE src/app/cursos/curso-detalhe/curso-detalhe.component.ts (296 bytes)
+CREATE src/app/cursos/curso-detalhe/curso-detalhe.component.css (0 bytes)
+UPDATE src/app/cursos/cursos.module.ts (416 bytes)
+--------------------------------------------------------------------------------
+Para manter um componente restrito (privado) a um modulo basta nao exporta-lo.
+Ex. O componente curso acessar curso-detalhe, mas o componente app nao, pois 
+curso-detalhe não foi exportado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
