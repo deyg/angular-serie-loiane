@@ -179,6 +179,15 @@ renderizacao dinamica de conteudo.
     </li>
 </ul>
 
+******************************
+unificando repositorio
+git checkout b templates
+//commit no branch templates
+//publicar branch templates no github
+git checkout master
+git rebase templates
+//publicar no github
+******************************
 
 
 
