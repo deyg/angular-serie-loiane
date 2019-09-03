@@ -158,6 +158,27 @@ curso-detalhe não foi exportado.
 
 
 
+------------------------------------------
+#6 - Templates
+------------------------------------------
+Trabalhando com os arquivos:
+- cursos.component.html (TEMPLATE)
+- cursos.component.ts (COMPONENTE)
+
+Entendendo e implementado o conceito de 
+WEB COMPONENTS: utilizando interpolacao {{nome_variavel}}
+para integrar .ts e .html (template e comportamento)
+[ "fazer comparacao com code behind de asp.net" ]
+
+Utilizando a diretiva *ngFor para
+renderizacao dinamica de conteudo.
+(O poder dos templates)
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>
+
 
 
 
