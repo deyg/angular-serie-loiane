@@ -189,8 +189,30 @@ git rebase templates
 //publicar no github
 ******************************
 
+/C/@cursos/_git-repositorios/loiane/angular-serie-loiane
+
+------------------------------------------
+#7 - Service e DI
+------------------------------------------
+Services contem a logica para recuperar dados 
+do back-end e será chamado no component
+> ng g s «nome-do-service»
+> ng g s cursos/cursos
+------------------------------------------
+PS C:\@cursos\_git-repositorios\loiane\angular-serie-loiane> ng g s cursos/cursos
+CREATE src/app/cursos/cursos.service.spec.ts (333 bytes)
+CREATE src/app/cursos/cursos.service.ts (135 bytes)
+------------------------------------------
 
 
+Requer provider em cursos.module.ts
+------------------------------------------
+NullInjectorError: StaticInjectorError(AppModule)[CursosComponent -> CursosService]: 
+  StaticInjectorError(Platform: core)[CursosComponent -> CursosService]: 
+    
+NullInjectorError: No provider for CursosService!
+------------------------------------------
+providers: [ CursosService ]
 
 
 
