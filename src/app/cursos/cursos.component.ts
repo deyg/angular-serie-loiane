@@ -16,8 +16,8 @@ export class CursosComponent implements OnInit {
     this.nomePortal = 'http://loiane.training';
     this.cursos = this.cursosService.getCursos();
 
-    //usar injecao de dependencia, veja o construtor
-    //const servico = new CursosService();
+    // usar injecao de dependencia, veja o construtor
+    // const servico = new CursosService();
 
   }
 
