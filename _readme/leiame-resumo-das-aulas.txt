@@ -251,7 +251,9 @@ npm install ngx-bootstrap bootstrap --save
 C:\@cursos\_git-repositorios\loiane\angular-serie-loiane\node_modules\bootstrap\dist\css\bootstrap.min.css
 
 
-
+------------------------------------------
+#11 Event Binding
+------------------------------------------
 
 
 
