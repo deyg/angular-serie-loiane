@@ -14,10 +14,67 @@
         
         <p>Usando interpolação: <b> {{ interpolation }} </b></p>        
         <img src="{{ urlImagem }}">
+        
+        <br><br>
 
         <p>Usando Property Binding: <b> {{ propertyBinding }} </b> </p>
         <img [src] = "urlImagem">
 
+    </article>
+
+    <article>
+        <br>
+
+        <h3>Class e Style Binding</h3>
+
+        Selecione uma classe:
+        <select #classe (change)="0">
+            <option value="alert-primary">primary</option>
+            <option value="alert-secondary">secondary</option>
+            <option value="alert-success">success</option>
+            <option value="alert-danger">danger</option>
+            <option value="alert-warning">warning</option>
+            <option value="alert-info">info</option>
+            <option value="alert-light">light</option>
+            <option value="alert-dark">dark</option>
+        </select>
+
+        <br><br>
+
+        <div class="alert {{ classe.value }}">
+            Texto colorido conforme valor do combobox
+        </div>
+
+        <div class="alert" role="alert"
+        [class.alert-primary]="classe.value == 'alert-primary'">
+        primary</div>
+        <div class="alert" role="alert"
+        [class.alert-secondary]="classe.value == 'alert-secondary'">
+        secondary</div>
+        <div class="alert" role="alert"
+        [class.alert-success]="classe.value == 'alert-success'">
+        success</div>
+        <div class="alert" role="alert"
+        [class.alert-danger]="classe.value == 'alert-danger'">
+        danger</div>
+        <div class="alert" role="alert"
+        [class.alert-warning]="classe.value == 'alert-warning'">
+        warning</div>
+        <div class="alert" role="alert"
+        [class.alert-info]="classe.value == 'alert-info'">
+        info</div>
+        <div class="alert" role="alert"
+        [class.alert-light]="classe.value == 'alert-light'">
+        light</div>
+        <div class="alert" role="alert"
+        [class.alert-dark]="classe.value == 'alert-dark'">
+        dark</div>
+
+        <br>
+
+        <div class="alert alert-danger" role="alert"
+        [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+        Esse texto somente aparece em caso de erro.</div>
     </article>
 
 </section>

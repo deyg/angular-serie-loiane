@@ -238,8 +238,17 @@ UPDATE src/app/app.module.ts (705 bytes)
 
 
 
+------------------------------------------
+#10 Class e Style Binding
+------------------------------------------
+add bootstrap:
+https://github.com/valor-software/ngx-bootstrap/blob/development/docs/getting-started/ng-cli.md
+npm install ngx-bootstrap bootstrap --save
 
+"../node_modules/bootstrap/dist/css/bootstrap.min.css",
+"node_modules/bootstrap/dist/css/bootstrap.min.css",
 
+C:\@cursos\_git-repositorios\loiane\angular-serie-loiane\node_modules\bootstrap\dist\css\bootstrap.min.css
 
 
 
