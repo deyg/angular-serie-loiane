@@ -303,7 +303,18 @@ two-way data binding: ou unidirecional em dois sentidos (tecnicamente)
 //internamente: bindon-ngModel
 <input type="text" bindon-ngModel="nome"/>
 
+- two-way data bind - antes de refatorar para o modulo meu-form.
+- two-way data bind - refatorado para o modulo meu-form.
 
+ng g m meu-form
+ng g c meu-form
+
+ao refatorar, atenção para os imports do angular
+imports e exports do novo componente criado
+e movimentacao do codigo do component 
+nao apenas do template
+e tambem declaracao do componente no
+modulo onde ele sera usado (onde o seletor sera usado)
 
 
 

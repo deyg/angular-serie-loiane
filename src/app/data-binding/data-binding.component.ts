@@ -33,16 +33,6 @@ export class DataBindingComponent implements OnInit {
 
   isMouseOver = false;
 
-  nome = 'abc';
-
-  pessoa: any = {
-    nome: 'Osvaldo de Andrade',
-    idade: '97',
-    endereco: {
-      bairro: 'Central da Estatistica',
-      cep: '40127-270'
-    }
-  };
 
   // function getValor() em TS
   getValor() {
