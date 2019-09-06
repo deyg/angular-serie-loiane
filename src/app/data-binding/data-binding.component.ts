@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { NgStyle } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
-  styleUrls: ['./data-binding.component.css'] //,
-  //css in-line com template literals
+  styleUrls: ['./data-binding.component.css'] // ,
+  // css in-line com template literals
   /*
   styles: [
     `
@@ -31,6 +32,17 @@ export class DataBindingComponent implements OnInit {
   valorSalvo = '';
 
   isMouseOver = false;
+
+  nome = 'abc';
+
+  pessoa: any = {
+    nome: 'Osvaldo de Andrade',
+    idade: '97',
+    endereco: {
+      bairro: 'Central da Estatistica',
+      cep: '40127-270'
+    }
+  };
 
   // function getValor() em TS
   getValor() {

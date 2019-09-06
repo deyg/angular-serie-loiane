@@ -76,52 +76,131 @@
         [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         Esse texto somente aparece em caso de erro.</div>
     </article>
+</section>
 
-    <section class="event-binding">
-        <article>
-            <h3>Event binding</h3>
-            <div>
-                <button (click)="botaoClicado()" 
-                class="btn btn-primary">clique-me</button>
+<section class="event-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <button (click)="botaoClicado()" 
+            class="btn btn-primary">clique-me</button>
 
-                <br><br>
-                <p>
-                    <label for="event.target.value">event.target.value: </label>
-                    <input type="text" name="event.target.value"
-                    id="event.target.value"
-                    (keyup)="onKeyUp($event)"
-                    (keyup.enter)="salvarValor($event.target.value)" 
-                    (blur)="salvarValor($event.target.value)"/>
-                </p>
+            <br><br>
+            <p>
+                <label for="event.target.value">event.target.value: </label>
+                <input type="text" name="event.target.value"
+                id="event.target.value"
+                (keyup)="onKeyUp($event)"
+                (keyup.enter)="salvarValor($event.target.value)" 
+                (blur)="salvarValor($event.target.value)"/>
+            </p>
 
-                <p>
-                    <!-- outra forma: usa variavel local #campoInput -->
-                    <label for="campoInput.value">campoInput.value: </label>
-                    <input type="text" name="campoInput.value"
-                    id="campoInput.value"
-                    (keyup)="onKeyUp($event)"
-                    (keyup.enter)="salvarValor(campoInput.value)" 
-                    (blur)="salvarValor(campoInput.value)"
-                    #campoInput/>
-                </p>
+            <p>
+                <!-- outra forma: usa variavel local #campoInput -->
+                <label for="campoInput.value">campoInput.value: </label>
+                <input type="text" name="campoInput.value"
+                id="campoInput.value"
+                (keyup)="onKeyUp($event)"
+                (keyup.enter)="salvarValor(campoInput.value)" 
+                (blur)="salvarValor(campoInput.value)"
+                #campoInput/>
+            </p>
 
-                <p>O valor atual é {{ valorAtual }}</p>
-                <p>O valor salvo é {{ valorSalvo }}</p>
+            <p>O valor atual é {{ valorAtual }}</p>
+            <p>O valor salvo é {{ valorSalvo }}</p>
 
-                <br><br>
+            <br>
 
-                <span
+            <span
                 (mouseover)="onMouseOverOut()"
                 (mouseout)="onMouseOverOut()"
                 [class.highlight]="isMouseOver"
-                >
-                    Passe o mouse sobre mim
-                </span>
+            >
+                Passe o mouse sobre mim
+            </span>
 
 
-                <br><br>
+            <br><br>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article>
+        <h3>Two-way data binding</h3>
+            
+        <div class="container">
+            <!-- class="form-control" estilo do bootstrap (desnecessario para o binding) -->
+            <input type="text" class="form-control"
+                [value]="nome"
+                (input)="nome = $event.target.value"
+            />
+            <br>
+
+            <input type="text" class="form-control"
+                [ngModel]="nome"  
+                (ngModelChange)="nome = $event"              
+            />
+            <br>
+
+            <input type="text" [(ngModel)]="nome" class="form-control"/>
+            <br>
+
+            <input type="text" bindon-ngModel="nome" class="form-control"/>
+
+            <p>Você digitou: {{ nome }}</p>
+
+        </div>
+
+    </article>
+
+    <article>
+        <h3>Two-way data binding - Com objeto e bootstrap</h3>
+        <div class="container">
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome"
+                    [(ngModel)]="pessoa.nome"
+                />
             </div>
-        </article>
-    </section>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="text" class="form-control" id="idade"
+                    [(ngModel)]="pessoa.idade"
+                />
+            </div>
+
+            <label><b>Endereço</b></label>
+
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" class="form-control" id="bairro"
+                    [(ngModel)]="pessoa.endereco.bairro"
+                />
+            </div>
+            
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" class="form-control" id="cep"
+                    [(ngModel)]="pessoa.endereco.cep"
+                />
+            </div>
+            <p>
+                <b>{{ pessoa.nome }}</b> tem 
+                <b>{{ pessoa.idade }}</b> anos de idade
+                trabalha no bairro <b>{{ pessoa.endereco.bairro }}</b>, 
+                cep <b>{{ pessoa.endereco.cep }}</b>.
+            </p>
+        </div>
+    </article>
 
 </section>
+
+
+
+
+
+
+<br><br><br><br>

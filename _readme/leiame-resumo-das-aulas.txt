@@ -251,9 +251,68 @@ npm install ngx-bootstrap bootstrap --save
 C:\@cursos\_git-repositorios\loiane\angular-serie-loiane\node_modules\bootstrap\dist\css\bootstrap.min.css
 
 
+
 ------------------------------------------
 #11 Event Binding
 ------------------------------------------
+Guia de referencia para eventos e elementos
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element
+https://developer.mozilla.org/pt-BR/docs/Web/Events
+
+
+------------------------------------------
+#12 Two Way Data Binding
+------------------------------------------
+/C/@cursos/_git-repositorios/loiane/angular-serie-loiane
+-----------------------------------------------------------------
+/*
+01 - Atualizando do componente para o template: 
+associacao de propriedade [value] => property binding
+02 - E do template para o componente: 
+associacao de evento (input) => event binding 
+*/
+
+<input type="text"
+	[value]="nome"
+        (input)="nome = $event.target.value"
+/>
+-----------------------------------------------------------------
+/*
+ngModel -> atencao para import de FormsModule em app.module.ts
+*/
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+...
+ imports: [
+    FormsModule,
+    BrowserModule,
+    ... 
+ ],
+
+===================
+<input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+/>
+==================
+/*
+two-way data binding: ou unidirecional em dois sentidos (tecnicamente) 
+*/
+<input type="text" [(ngModel)]="nome"/>
+//internamente: bindon-ngModel
+<input type="text" bindon-ngModel="nome"/>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
