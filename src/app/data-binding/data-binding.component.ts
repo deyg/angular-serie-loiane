@@ -33,6 +33,8 @@ export class DataBindingComponent implements OnInit {
 
   isMouseOver = false;
 
+  nomeDoCurso = 'Angular';
+
 
   // function getValor() em TS
   getValor() {

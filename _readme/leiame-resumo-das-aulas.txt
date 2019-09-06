@@ -318,6 +318,13 @@ modulo onde ele sera usado (onde o seletor sera usado)
 
 
 
+------------------------------------------
+#13 Reusando Componentes com Input properties
+------------------------------------------
+/C/@cursos/_git-repositorios/loiane/angular-serie-loiane
+
+criação do componente input-property
+
 
 
 
